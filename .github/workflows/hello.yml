@@ -1,0 +1,12 @@
+name: First CI/CD Pipeline
+
+on:
+    push:
+
+jobs:
+    hello:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Run Command hello world
+              run: echo "Hello guys this is my first pipeline, github action is working!!"
