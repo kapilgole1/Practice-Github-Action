@@ -1,0 +1,11 @@
+name: calling reusable workflow
+
+on:
+  push:
+jobs:
+    call:
+        uses: ./.github/workflows/reusable.yml
+        with:
+            python-version: '3.11'
+            name: Practice
+            APP: Frontend
