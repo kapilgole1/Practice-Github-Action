@@ -13,6 +13,10 @@ on:
         required: true
         type: string
 
+env:
+    name: ${{ inputs.name }}
+    APP: ${{ inputs.APP }}
+
 jobs:
   Run:
     runs-on: ubuntu-latest
@@ -29,4 +33,6 @@ jobs:
         run: pip install flake8
 
       - name: Run flake8
-        run: flake8 app.py
+        run: |
+          flake8 app.py
+          echo "App: ${APP} && Name: ${name}"
