@@ -9,4 +9,12 @@ jobs:
 
         steps:
             - name: Run Command hello world
-              run: echo "Hello guys this is my first pipeline, github action is working!!"
+              run: |
+               echo "Hello guys this is my first pipeline, github action is working!!"
+               ls
+               mkdir Test
+               ls
+               uname -a
+               whoami
+               date
+               echo "Completed"
