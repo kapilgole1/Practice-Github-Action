@@ -31,6 +31,6 @@ jobs:
         needs: Run
         steps:
             - name: Usage of need keyword
-              if: github.ref == 'master'
+              if: github.ref == 'branches/master'
               run: |
                 echo "This step will run after the Run job is completed."
