@@ -1,7 +1,7 @@
 name: First CI/CD Pipeline
 
 on:
-    push:
+  push:
 
 env:
     name: Practice
@@ -31,5 +31,6 @@ jobs:
         needs: Run
         steps:
             - name: Usage of need keyword
+              if: github.ref == 'master'
               run: |
                 echo "This step will run after the Run job is completed."
