@@ -21,6 +21,7 @@ jobs:
                 python-version: '3.11'
 
             - name: Run Command hello world
+              if: github.ref == 'branches/master'
               run: |
                 echo "Hello guys this is my first pipeline, github action is working!!"
                 echo "App: ${APP}"
