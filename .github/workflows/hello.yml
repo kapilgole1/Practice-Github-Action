@@ -18,3 +18,4 @@ jobs:
                whoami
                date
                echo "Completed"
+               pwd
