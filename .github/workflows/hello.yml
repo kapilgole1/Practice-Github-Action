@@ -5,11 +5,12 @@ on:
 
 env:
     name: Practice
+    APP: Frontend
 
 jobs:
+
     Run:
         runs-on: ubuntu-latest
-
         steps:
             - name: Cloning Repo code to runner
               uses: actions/checkout@v4
@@ -22,14 +23,13 @@ jobs:
             - name: Run Command hello world
               run: |
                 echo "Hello guys this is my first pipeline, github action is working!!"
-                ls
-                mkdir Test
-                ls
-                uname -a
-                whoami
-                date
-                echo "This is ${name}"
-                pwd
+                echo "App: ${APP}"
 
-            - name: Run Python Script
-              run: python app.py
+
+    test:
+        runs-on: windows-latest
+        needs: Run
+        steps:
+            - name: Usage of need keyword
+              run: |
+                echo "This step will run after the Run job is completed."
