@@ -4,30 +4,29 @@ on:
     push:
 
 jobs:
-    hello:
+    Run:
         runs-on: ubuntu-latest
-        
-        steps:
-            - name: Run Command hello world
-              run: |
-               echo "Hello guys this is my first pipeline, github action is working!!"
-               ls
-               mkdir Test
-               ls
-               uname -a
-               whoami
-               date
-               echo "Completed"
-               pwd
 
         steps:
             - name: Cloning Repo code to runner
               uses: actions/checkout@v4
 
-            - name: Setup Python 
+            - name: Setup Python
               uses: actions/setup-python@v5
               with:
                 python-version: '3.11'
+
+            - name: Run Command hello world
+              run: |
+                echo "Hello guys this is my first pipeline, github action is working!!"
+                ls
+                mkdir Test
+                ls
+                uname -a
+                whoami
+                date
+                echo "Completed"
+                pwd
 
             - name: Run Python Script
               run: python app.py
