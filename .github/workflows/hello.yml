@@ -3,6 +3,9 @@ name: First CI/CD Pipeline
 on:
     push:
 
+env:
+    name: Practice
+
 jobs:
     Run:
         runs-on: ubuntu-latest
@@ -25,7 +28,7 @@ jobs:
                 uname -a
                 whoami
                 date
-                echo "Completed"
+                echo "This is ${name}"
                 pwd
 
             - name: Run Python Script
